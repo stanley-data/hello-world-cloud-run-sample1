@@ -1,28 +1,16 @@
-# Cloud Run "Hello" container source code
+⚠️ For a more complete example of a Python microservice, please use [GoogleCloudPlatform/cloud-run-microservice-template-python](https://github.com/GoogleCloudPlatform/cloud-run-microservice-template-python)
 
-This repository contains the source code of multiple sample applications.
+# Hello World, Python
 
-## Hello service
+A template repository for a sample Cloud Run service, written in Python
 
-A sample service implemented in Go and distributed as a public container image. It is used in the [Cloud Run quickstart](https://cloud.google.com/run/docs/quickstarts/deploy-container) and is a suggested container image in the Cloud Run UI on Cloud Console.
+ * `app.py` sourced from the [knative sample documentation](https://github.com/knative/docs/blob/main/code-samples/serving/hello-world/helloworld-python/app.py)
+ * `Dockerfile` sourced from the [knative sample documentation](https://github.com/knative/docs/blob/main/code-samples/serving/hello-world/helloworld-python/Dockerfile)
 
-* **Container Image:** `us-docker.pkg.dev/cloudrun/container/hello`
+## Contributions
 
-### Configuration Options
+Please see the [contributing guidelines](CONTRIBUTING.md)
 
-Set the `COLOR` environment variable to a valid CSS color to change the background color.
+## License
 
-<a href="https://deploy.cloud.run"><img src="https://deploy.cloud.run/button.svg" alt="Run on Google Cloud" height="40"/></a>
-
-## Hello job
-
-A sample job implemented in Go and distributed as a public container image. It is used in the [Cloud Run quickstart](https://cloud.google.com/run/docs/quickstarts/jobs/create-execute) and is a suggested container image in the Cloud Run UI on Cloud Console.
-
-* **Container Image:** `us-docker.pkg.dev/cloudrun/container/hello-job`
-* **Source Code:** [job/](job/)
-
-## Placeholder service
-
-A sample service implemented in Go and distributed as a public container image. It is used to create a placeholder revision when setting up [Continuous Deployment](https://cloud.google.com/run/docs/continuous-deployment-with-cloud-build).
-
-* **Container Image:** `us-docker.pkg.dev/cloudrun/container/placeholder`
+This library is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE).

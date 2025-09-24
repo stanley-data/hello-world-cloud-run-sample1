@@ -1,34 +1,28 @@
-# Copyright 2022 Google LLC
+#!/usr/bin/python
+#
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     https://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import os
 
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
+from flask import Flask
 
-# Test binary, built with `go test -c`
-*.test
+app = Flask(__name__)
 
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+@app.route('/')
+def hello_world():
+    target = os.environ.get('TARGET', 'World')
+    return 'Hello {}!\n'.format(target)
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
-
-# Go workspace file
-go.work
-
-.DS_Store
+if __name__ == "__main__":
+    app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
